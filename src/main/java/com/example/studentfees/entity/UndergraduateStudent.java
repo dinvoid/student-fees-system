@@ -9,9 +9,22 @@ public class UndergraduateStudent extends Student {
 
     private int creditHours;
 
+    // Default constructor
     public UndergraduateStudent() {}
-    public UndergraduateStudent(String regdNo, String name, int creditHours) {
-        super(regdNo, name);
+
+    // Constructor with parameters
+    public UndergraduateStudent(String regdNo, String name, int age, int creditHours) {
+        super(regdNo, name, age);
+        this.creditHours = creditHours;
+    }
+
+    // Getter for creditHours
+    public int getCreditHours() {
+        return creditHours;
+    }
+
+    // Setter for creditHours
+    public void setCreditHours(int creditHours) {
         this.creditHours = creditHours;
     }
 

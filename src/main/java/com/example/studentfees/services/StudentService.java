@@ -25,16 +25,16 @@ public class StudentService {
     public StudentResponse registerStudent(StudentRegistrationRequest request) {
         Student student = createStudent(request);
         studentRepo.save(student);
-        return new StudentResponse(student.getRegdNo(), student.getName(), student.calculateFee());
+        return new StudentResponse(student.getRegdNo(), student.getName(), student.getAge());
     }
     private Student createStudent(StudentRegistrationRequest request) {
         switch (request.getType().toUpperCase()) {
             case "UNDERGRADUATE":
-                return new UndergraduateStudent(request.getRegdNo(), request.getName(), request.getAge());
+                return new UndergraduateStudent(request.getRegdNo(), request.getName(), request.getAge(),request.getCreditHours());
             case "GRADUATE":
-                return new GraduateStudent(request.getRegdNo(), request.getName(), request.getAge());
-            case "PARTTIME":
-                return new PartTimeStudent(request.getRegdNo(), request.getName(), request.getAge());
+                return new GraduateStudent(request.getRegdNo(), request.getName(), request.getAge(),1);
+            case "PART_TIME":
+                return new PartTimeStudent(request.getRegdNo(), request.getName(), request.getAge(),request.getAttendedHours());
             default:
                 throw new InvalidStudentTypeException("Invalid student type");
         }

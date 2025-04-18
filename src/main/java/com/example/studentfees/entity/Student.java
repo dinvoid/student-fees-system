@@ -13,11 +13,17 @@ public abstract class Student {
     private int age;
     private String type; // "UNDERGRADUATE", "GRADUATE", or "PARTTIME"
 
-
+   public int getAge(){
+       return age;
+   }
+   public void setAge(int age){
+       this.age=age;
+   }
     public Student() {}
-    public Student(String regdNo, String name) {
+    public Student(String regdNo, String name,int age) {
         this.regdNo = regdNo;
         this.name = name;
+        this.age=age;
     }
 
     public abstract double calculateFee();

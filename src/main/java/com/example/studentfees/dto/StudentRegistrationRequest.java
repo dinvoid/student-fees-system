@@ -14,10 +14,10 @@ public class StudentRegistrationRequest {
     private String name;
 
     private int age;
-
+    private int creditHours;
     @NotNull(message = "Student type cannot be null")
     private String type; // UNDERGRADUATE, GRADUATE, PARTTIME
-
+    private int attendedHours;
     // Getters and setters
     public String getRegdNo() { return regdNo; }
     public void setRegdNo(String regdNo) { this.regdNo = regdNo; }
@@ -30,4 +30,20 @@ public class StudentRegistrationRequest {
 
     public String getType() { return type; }
     public void setType(String type) { this.type = type; }
+    public int getCreditHours() {
+        return creditHours;
+    }
+
+    // Setter for creditHours
+    public void setCreditHours(int creditHours) {
+        this.creditHours = creditHours;
+    }
+    public int getAttendedHours() {
+        return attendedHours;
+    }
+
+    // Setter for attendedHours
+    public void setAttendedHours(int attendedHours) {
+        this.attendedHours = attendedHours;
+    }
 }
